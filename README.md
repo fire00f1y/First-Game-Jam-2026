@@ -41,3 +41,5 @@ Some further setup you can do, but is not required for initial setup:
 - Add the change by typing `git add .` in the project directory in your terminal
 - Commit the change by typing `git commit -m "I made a super cool change"` or whatever other message
 - Push the change by typing `git push` and it should work without giving you an issue
+
+**Side Note:** if you're interested, Rider has a [good walkthrough](https://www.jetbrains.com/guide/gamedev/tutorials/rider-godot-pong/) of making a simple game using Godot and Rider. 
