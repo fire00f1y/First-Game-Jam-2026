@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-const SPEED: float = 300.0
-const JUMP_VELOCITY: float = -400.0
+@export var speed: float = 300.0
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("menu"):
@@ -12,5 +11,5 @@ func _physics_process(delta: float) -> void:
 	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	input_vector = input_vector.normalized()
 	
-	velocity = input_vector * SPEED
+	velocity = input_vector * speed
 	move_and_slide()

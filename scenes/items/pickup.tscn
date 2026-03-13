@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cos555buy5wcx"]
+
+[ext_resource type="Texture2D" uid="uid://do1doecoxrkjf" path="res://assets/tiles/sprites/items/items1.png" id="1_clh00"]
+[ext_resource type="Script" uid="uid://cfp2xatqmrdvf" path="res://scripts/items/pickup.gd" id="1_yllof"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0r6o"]
+size = Vector2(22, 23)
+
+[node name="Pickup" type="Area2D" unique_id=1444914053]
+script = ExtResource("1_yllof")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=522499819]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_s0r6o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1772527804]
+z_index = 10
+texture = ExtResource("1_clh00")
+region_enabled = true
+region_rect = Rect2(3.6185684, 3.2038841, 24.591599, 25.63805)
