@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://kwq5hhm7531t"]
+
+[ext_resource type="Texture2D" uid="uid://bdxisq30bnc3a" path="res://assets/tiles/Knight 2D/Sprites/without_outline/WALK.png" id="1_15tap"]
+[ext_resource type="Script" uid="uid://cns3qmokh4v4m" path="res://scripts/characters/player.gd" id="1_ru62r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cacbb"]
+size = Vector2(16, 23)
+
+[node name="Player" type="CharacterBody2D" unique_id=1746631820]
+script = ExtResource("1_ru62r")
+
+[node name="CollisionBox" type="CollisionShape2D" parent="." unique_id=482961981]
+position = Vector2(2, 5.5)
+shape = SubResource("RectangleShape2D_cacbb")
+
+[node name="Image" type="Sprite2D" parent="." unique_id=1961371231]
+texture = ExtResource("1_15tap")
+region_enabled = true
+region_rect = Rect2(35.548775, 26.102062, 21.352856, 35.647655)
