@@ -1,17 +1,24 @@
+@tool
 extends Area2D
 
 @export var value: int = 1
 @export var remove_on_pickup: bool = true
 @export var actions: Array[PickupAction] = []
-@export var icon_texture: Texture2D
 
 @onready var sprite: Sprite2D = $Sprite2D
 
-func _ready() -> void:
-	if icon_texture:
-		sprite.texture = icon_texture
-	body_entered.connect(_on_body_entered)
+@export var item_icon: Texture2D:
+	set(value):
+		item_icon = value
+		if sprite:
+			sprite.texture = value
 
+func _ready() -> void:
+	body_entered.connect(_on_body_entered)
+	
+	if item_icon:
+		sprite.texture = item_icon
+	
 func _on_body_entered(body: Node) -> void:
 	if not body.is_in_group("player"):
 		return
