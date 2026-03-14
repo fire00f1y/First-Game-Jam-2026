@@ -45,51 +45,56 @@ speed = 100.0
 [node name="Camera" type="Camera2D" parent="Player" unique_id=290975197]
 zoom = Vector2(2.955, 2.955)
 
-[node name="HealthPotion" parent="." unique_id=1444914053 instance=ExtResource("4_jyhfs")]
+[node name="Collectables" type="Node2D" parent="." unique_id=1302460351]
+
+[node name="HealthPotion" parent="Collectables" unique_id=1444914053 instance=ExtResource("4_jyhfs")]
 position = Vector2(82, 394)
 actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_choun")])
 item_icon = SubResource("AtlasTexture_ya4ey")
 
-[node name="Poison" parent="." unique_id=843707196 instance=ExtResource("4_jyhfs")]
+[node name="Poison" parent="Collectables" unique_id=843707196 instance=ExtResource("4_jyhfs")]
 position = Vector2(746, 187)
 actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
 item_icon = ExtResource("5_tbgi4")
 
-[node name="Poison2" parent="." unique_id=1929824848 instance=ExtResource("4_jyhfs")]
+[node name="Poison2" parent="Collectables" unique_id=1929824848 instance=ExtResource("4_jyhfs")]
 position = Vector2(1214, 421)
 actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
 item_icon = ExtResource("5_tbgi4")
 
-[node name="Poison3" parent="." unique_id=56868735 instance=ExtResource("4_jyhfs")]
+[node name="Poison3" parent="Collectables" unique_id=56868735 instance=ExtResource("4_jyhfs")]
 position = Vector2(137, 179)
 actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
 item_icon = ExtResource("5_tbgi4")
 
-[node name="Poison4" parent="." unique_id=646535869 instance=ExtResource("4_jyhfs")]
+[node name="Poison4" parent="Collectables" unique_id=646535869 instance=ExtResource("4_jyhfs")]
 position = Vector2(286, 290)
 actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
 item_icon = ExtResource("5_tbgi4")
 
-[node name="Poison8" parent="." unique_id=1810558644 instance=ExtResource("4_jyhfs")]
+[node name="Poison8" parent="Collectables" unique_id=1810558644 instance=ExtResource("4_jyhfs")]
 position = Vector2(284, 472)
 actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
 item_icon = ExtResource("5_tbgi4")
 
-[node name="Poison5" parent="." unique_id=433365627 instance=ExtResource("4_jyhfs")]
+[node name="Poison5" parent="Collectables" unique_id=433365627 instance=ExtResource("4_jyhfs")]
 position = Vector2(520, 162)
 actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
 item_icon = ExtResource("5_tbgi4")
 
-[node name="Poison6" parent="." unique_id=894773212 instance=ExtResource("4_jyhfs")]
+[node name="Poison6" parent="Collectables" unique_id=894773212 instance=ExtResource("4_jyhfs")]
 position = Vector2(522, 462)
 actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
 item_icon = ExtResource("5_tbgi4")
 
-[node name="Poison7" parent="." unique_id=1417692192 instance=ExtResource("4_jyhfs")]
+[node name="Poison7" parent="Collectables" unique_id=1417692192 instance=ExtResource("4_jyhfs")]
 position = Vector2(537, 343)
 actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
 item_icon = ExtResource("5_tbgi4")
 
-[node name="Monster" parent="." unique_id=256242491 instance=ExtResource("9_85g3d")]
+[node name="Monsters" type="Node2D" parent="." unique_id=1427103110]
+
+[node name="MushroomMan" parent="Monsters" unique_id=256242491 instance=ExtResource("9_85g3d")]
 position = Vector2(223, 437)
-scale = Vector2(-1, 1)
+rotation = 3.1415927
+scale = Vector2(1, -1)
