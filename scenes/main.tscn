@@ -7,10 +7,20 @@
 [ext_resource type="Script" uid="uid://bbu6ljjcqt130" path="res://scripts/events/PickupAction.gd" id="5_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://cnb2angbv6vsx" path="res://assets/resources/item_atlas.tres" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://bj02rxukgqe86" path="res://scripts/events/ModifyHealth.gd" id="6_tipki"]
+[ext_resource type="Texture2D" uid="uid://do1doecoxrkjf" path="res://assets/tiles/sprites/items/items1.png" id="7_tipki"]
+[ext_resource type="PackedScene" uid="uid://bqu5im6v10igj" path="res://scenes/actors/monster.tscn" id="9_85g3d"]
+
+[sub_resource type="Resource" id="Resource_choun"]
+script = ExtResource("6_tipki")
+amount = 15
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya4ey"]
+atlas = ExtResource("7_tipki")
+region = Rect2(63, -1, 32, 32)
 
 [sub_resource type="Resource" id="Resource_85g3d"]
 script = ExtResource("6_tipki")
-amount = 15
+amount = -15
 
 [node name="Main" type="Node2D" unique_id=2069614600]
 
@@ -35,7 +45,51 @@ speed = 100.0
 [node name="Camera" type="Camera2D" parent="Player" unique_id=290975197]
 zoom = Vector2(2.955, 2.955)
 
-[node name="Pickup" parent="." unique_id=1444914053 instance=ExtResource("4_jyhfs")]
-position = Vector2(189, 544)
+[node name="HealthPotion" parent="." unique_id=1444914053 instance=ExtResource("4_jyhfs")]
+position = Vector2(82, 394)
+actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_choun")])
+item_icon = SubResource("AtlasTexture_ya4ey")
+
+[node name="Poison" parent="." unique_id=843707196 instance=ExtResource("4_jyhfs")]
+position = Vector2(746, 187)
 actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
 item_icon = ExtResource("5_tbgi4")
+
+[node name="Poison2" parent="." unique_id=1929824848 instance=ExtResource("4_jyhfs")]
+position = Vector2(1214, 421)
+actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
+item_icon = ExtResource("5_tbgi4")
+
+[node name="Poison3" parent="." unique_id=56868735 instance=ExtResource("4_jyhfs")]
+position = Vector2(137, 179)
+actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
+item_icon = ExtResource("5_tbgi4")
+
+[node name="Poison4" parent="." unique_id=646535869 instance=ExtResource("4_jyhfs")]
+position = Vector2(286, 290)
+actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
+item_icon = ExtResource("5_tbgi4")
+
+[node name="Poison8" parent="." unique_id=1810558644 instance=ExtResource("4_jyhfs")]
+position = Vector2(284, 472)
+actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
+item_icon = ExtResource("5_tbgi4")
+
+[node name="Poison5" parent="." unique_id=433365627 instance=ExtResource("4_jyhfs")]
+position = Vector2(520, 162)
+actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
+item_icon = ExtResource("5_tbgi4")
+
+[node name="Poison6" parent="." unique_id=894773212 instance=ExtResource("4_jyhfs")]
+position = Vector2(522, 462)
+actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
+item_icon = ExtResource("5_tbgi4")
+
+[node name="Poison7" parent="." unique_id=1417692192 instance=ExtResource("4_jyhfs")]
+position = Vector2(537, 343)
+actions = Array[ExtResource("5_o6xl0")]([SubResource("Resource_85g3d")])
+item_icon = ExtResource("5_tbgi4")
+
+[node name="Monster" parent="." unique_id=256242491 instance=ExtResource("9_85g3d")]
+position = Vector2(223, 437)
+scale = Vector2(-1, 1)
