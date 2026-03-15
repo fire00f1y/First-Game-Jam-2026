@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cp8gpo8xmw5bh"
+path="res://.godot/imported/DavidKBD - InterstellarPack - 08 - Synth Kobra.ogg-bdca705bec871494f133069a0da8fb3a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/DavidKBD - InterstellarPack - 08 - Synth Kobra.ogg"
+dest_files=["res://.godot/imported/DavidKBD - InterstellarPack - 08 - Synth Kobra.ogg-bdca705bec871494f133069a0da8fb3a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

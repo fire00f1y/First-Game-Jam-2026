@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://x1irupqatyc1"
+path="res://.godot/imported/DavidKBD - InterstellarPack - 04 - Horsehead Nebula.ogg-84cd816aec70e66516c770380fdf3eb0.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/DavidKBD - InterstellarPack - 04 - Horsehead Nebula.ogg"
+dest_files=["res://.godot/imported/DavidKBD - InterstellarPack - 04 - Horsehead Nebula.ogg-84cd816aec70e66516c770380fdf3eb0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
