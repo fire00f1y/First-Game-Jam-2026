@@ -9,6 +9,15 @@
 [ext_resource type="Script" uid="uid://bj02rxukgqe86" path="res://scripts/events/ModifyHealth.gd" id="6_tipki"]
 [ext_resource type="Texture2D" uid="uid://do1doecoxrkjf" path="res://assets/tiles/sprites/items/items1.png" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://bqu5im6v10igj" path="res://scenes/actors/monster.tscn" id="9_85g3d"]
+[ext_resource type="Script" uid="uid://y063pcl82n2w" path="res://scripts/items/torch.gd" id="10_choun"]
+
+[sub_resource type="Gradient" id="Gradient_choun"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ya4ey"]
+gradient = SubResource("Gradient_choun")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="Resource" id="Resource_choun"]
 script = ExtResource("6_tipki")
@@ -22,6 +31,23 @@ region = Rect2(63, -1, 32, 32)
 script = ExtResource("6_tipki")
 amount = -15
 
+[sub_resource type="Gradient" id="Gradient_85g3d"]
+offsets = PackedFloat32Array(0, 0.69557196)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_choun"]
+gradient = SubResource("Gradient_85g3d")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Environment" id="Environment_85g3d"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.4
+glow_bloom = 1.0
+glow_blend_mode = 0
+glow_hdr_threshold = 0.6
+
 [node name="Main" type="Node2D" unique_id=2069614600]
 
 [node name="DebugHUD" parent="." unique_id=1987173055 instance=ExtResource("1_sugp2")]
@@ -34,7 +60,7 @@ physics_quadrant_size = 32
 
 [node name="ObstaclesLayer" type="TileMapLayer" parent="." unique_id=1314031370]
 z_index = 1
-tile_map_data = PackedByteArray("AAAcAA0AAAAFAAkAAAAdAA0AAAAFAAkAAAAbAA0AAAAFAAkAAAAZAA0AAAAFAAkAAAAZAAwAAAAFAAkAAAAZAAsAAAAFAAkAAAAZAA8AAAAFAAkAAAAYAA8AAAAFAAkAAAAXAA8AAAAFAAkAAAAXAA4AAAAFAAkAAAAXAA0AAAAFAAkAAAAZAAkAAAAFAAkAAAAaAAkAAAAFAAkAAAAYAAkAAAAFAAkAAAAXAAkAAAAFAAkAAAAXAAoAAAAFAAkAAAAXAAsAAAAFAAkAAAAaAA8AAAAFAAkAAAAEAAwAAAABAAgAAAAEAAsAAAABAAgAAAACAAsAAAABAAgAAAAkAA8AAAAGAAYAAAAkAAsAAAAGAAYAAAAUAA8AAAADAAEAAAAUAAwAAAADAAEAAAAUAAkAAAADAAEAAAAUAAYAAAADAAEAAAAHAAYAAAADAAEAAAAHAA8AAAADAAEAAAAiABEAAAAAAAMAAAAJAAQAAAAAAAIAAAAOAAwAAAABAAMAAAAOAAkAAAABAAMAAAAQABQAAAAAAAQAAAAQAAEAAAABAAQAAAAEAAIAAAABAAQAAAAFAAkAAAABAAMAAAAFAA0AAAABAAMAAAAEABMAAAAAAAQAAAAJAAwAAAABAAIAAAAJAAkAAAABAAIAAAAaAAsAAAABAAIAAAAaAA4AAAABAAIAAAAiAAsAAAABAAMAAAAiAA4AAAABAAMAAAAmAAsAAAABAAIAAAAmAA8AAAABAAIAAAAYAAUAAAABAAQAAAACAAIAAAAAAAgAAAAZAAMAAAAHAAcAAAAZAAQAAAAHAAgAAAAZAAIAAAABAAMAAAAkAAIAAAABAAIAAAA=")
+tile_map_data = PackedByteArray("AAAcAA0AAAAFAAkAAAAdAA0AAAAFAAkAAAAbAA0AAAAFAAkAAAAZAA0AAAAFAAkAAAAZAAwAAAAFAAkAAAAZAAsAAAAFAAkAAAAZAA8AAAAFAAkAAAAYAA8AAAAFAAkAAAAXAA8AAAAFAAkAAAAXAA4AAAAFAAkAAAAXAA0AAAAFAAkAAAAZAAkAAAAFAAkAAAAaAAkAAAAFAAkAAAAYAAkAAAAFAAkAAAAXAAkAAAAFAAkAAAAXAAoAAAAFAAkAAAAXAAsAAAAFAAkAAAAaAA8AAAAFAAkAAAAEAAwAAAABAAgAAAAEAAsAAAABAAgAAAACAAsAAAABAAgAAAAkAA8AAAAGAAYAAAAkAAsAAAAGAAYAAAAUAA8AAAADAAEAAAAUAAwAAAADAAEAAAAUAAkAAAADAAEAAAAUAAYAAAADAAEAAAAHAAYAAAADAAEAAAAHAA8AAAADAAEAAAAiABEAAAAAAAMAAAAJAAQAAAAAAAIAAAAOAAwAAAABAAMAAAAOAAkAAAABAAMAAAAQABQAAAAAAAQAAAAQAAEAAAABAAQAAAAEAAIAAAABAAQAAAAFAAkAAAABAAMAAAAFAA0AAAABAAMAAAAEABMAAAAAAAQAAAAJAAwAAAABAAIAAAAJAAkAAAABAAIAAAAaAAsAAAABAAIAAAAaAA4AAAABAAIAAAAiAAsAAAABAAMAAAAiAA4AAAABAAMAAAAmAAsAAAABAAIAAAAmAA8AAAABAAIAAAAYAAUAAAABAAQAAAACAAIAAAAAAAgAAAAZAAMAAAAHAAcAAAAZAAQAAAAHAAgAAAAZAAIAAAABAAMAAAAkAAIAAAABAAIAAAAUAA4AAAAAAAQAAAAUAAcAAAABAAQAAAA=")
 tile_set = ExtResource("1_o5qli")
 
 [node name="Player" parent="." unique_id=1746631820 instance=ExtResource("2_0wfyh")]
@@ -43,7 +69,11 @@ position = Vector2(302, 143)
 speed = 100.0
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=290975197]
-zoom = Vector2(2.955, 2.955)
+zoom = Vector2(2, 2)
+
+[node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=1235259398]
+energy = 0.3
+texture = SubResource("GradientTexture2D_ya4ey")
 
 [node name="Collectables" type="Node2D" parent="." unique_id=1302460351]
 
@@ -98,3 +128,263 @@ item_icon = ExtResource("5_tbgi4")
 position = Vector2(223, 437)
 rotation = 3.1415927
 scale = Vector2(1, -1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1793589668]
+color = Color(0.16470589, 0.12156863, 0.20784314, 1)
+
+[node name="torches" type="Node2D" parent="." unique_id=1926615468]
+
+[node name="PointLight2D" type="PointLight2D" parent="torches" unique_id=1195032197]
+position = Vector2(142, 71)
+scale = Vector2(1.328125, 1.296875)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D2" type="PointLight2D" parent="torches" unique_id=1020423065]
+position = Vector2(163.99998, 305)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D3" type="PointLight2D" parent="torches" unique_id=1894908739]
+position = Vector2(452, 305)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D21" type="PointLight2D" parent="torches" unique_id=604039598]
+position = Vector2(655, 476)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D20" type="PointLight2D" parent="torches" unique_id=423290760]
+position = Vector2(656, 228.99998)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.02745098, 0.003921569, 0.09019608, 0.5019608)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D4" type="PointLight2D" parent="torches" unique_id=759976535]
+position = Vector2(316, 305)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D5" type="PointLight2D" parent="torches" unique_id=485694073]
+position = Vector2(315, 402)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D6" type="PointLight2D" parent="torches" unique_id=1193337113]
+position = Vector2(143, 635)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D7" type="PointLight2D" parent="torches" unique_id=176001681]
+position = Vector2(455.00003, 399.99997)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D8" type="PointLight2D" parent="torches" unique_id=1075723766]
+position = Vector2(528, 668)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D9" type="PointLight2D" parent="torches" unique_id=434140665]
+position = Vector2(163.99997, 430.99997)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D10" type="PointLight2D" parent="torches" unique_id=823626285]
+position = Vector2(528, 40.99991)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D11" type="PointLight2D" parent="torches" unique_id=857741927]
+position = Vector2(786, 168.00002)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D12" type="PointLight2D" parent="torches" unique_id=245822258]
+position = Vector2(802.99994, 80.99999)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D13" type="PointLight2D" parent="torches" unique_id=1783953753]
+position = Vector2(858, 368.99997)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D14" type="PointLight2D" parent="torches" unique_id=1484524421]
+position = Vector2(860.99994, 464.99997)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D15" type="PointLight2D" parent="torches" unique_id=1857086392]
+position = Vector2(1092, 369)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D16" type="PointLight2D" parent="torches" unique_id=1683901019]
+position = Vector2(1094, 465)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D17" type="PointLight2D" parent="torches" unique_id=192908806]
+position = Vector2(1244, 368.99994)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D18" type="PointLight2D" parent="torches" unique_id=283162010]
+position = Vector2(1242.9999, 495)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="PointLight2D19" type="PointLight2D" parent="torches" unique_id=68747407]
+position = Vector2(1179, 81.99994)
+scale = Vector2(1.763916, 1.6818848)
+color = Color(1, 0.53333336, 0.2, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.046363287, 0.010826937, 0.0029229475, 0)
+shadow_filter_smooth = 3.3
+texture = SubResource("GradientTexture2D_choun")
+script = ExtResource("10_choun")
+flicker_amount = 0.3
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1007940368]
+environment = SubResource("Environment_85g3d")
