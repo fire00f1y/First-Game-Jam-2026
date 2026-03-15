@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" uid="uid://capj5r0rhw4t2" path="res://scripts/ui/debug_hud.gd" id="1_b7bo0"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_b7bo0"]
-font_size = 4
-
 [node name="DebugHUD" type="CanvasLayer" unique_id=1987173055]
 script = ExtResource("1_b7bo0")
 
@@ -16,4 +13,3 @@ offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
 text = "Debug text!"
-label_settings = SubResource("LabelSettings_b7bo0")
