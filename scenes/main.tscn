@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bqu5im6v10igj" path="res://scenes/actors/monster.tscn" id="9_85g3d"]
 [ext_resource type="Script" uid="uid://y063pcl82n2w" path="res://scripts/items/torch.gd" id="10_choun"]
 [ext_resource type="TileSet" uid="uid://bp85mcyc4b8gq" path="res://assets/resources/Epic_Demo.tres" id="11_ya4ey"]
-[ext_resource type="PackedScene" uid="uid://bjeke7ujtmgi3" path="res://scenes/items/campfire.tscn" id="12_eb6dy"]
+[ext_resource type="PackedScene" path="res://scenes/items/campfire.tscn" id="12_eb6dy"]
 
 [sub_resource type="Resource" id="Resource_choun"]
 script = ExtResource("6_tipki")
@@ -392,12 +392,12 @@ position = Vector2(1356, 1744)
 
 [node name="Player" parent="." unique_id=1746631820 instance=ExtResource("2_0wfyh")]
 z_index = 2
-position = Vector2(295, 146)
+position = Vector2(1321, 1693)
 speed = 100.0
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=290975197]
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=1235259398]
-position = Vector2(-4, 4)
+position = Vector2(-67, 5)
 energy = 0.3
 texture = SubResource("GradientTexture2D_ya4ey")
