@@ -1,0 +1,23 @@
+[remap]
+
+importer="YATI"
+type="PackedScene"
+uid="uid://v82xg257rgf1"
+path="res://.godot/imported/hole-3-transparency-rule2-applies variations.tmx-c542c6106914772121031d0917689c3d.tscn"
+
+[deps]
+
+source_file="res://assets/tiles/Grass Land 2.0 V1.9/TiledMap Editor/Rules/hole-3-transparency-rule2-applies variations.tmx"
+dest_files=["res://.godot/imported/hole-3-transparency-rule2-applies variations.tmx-c542c6106914772121031d0917689c3d.tscn"]
+
+[params]
+
+use_default_filter=false
+add_class_as_metadata=false
+add_id_as_metadata=false
+no_alternative_tiles=false
+map_wangset_to_terrain=false
+custom_data_prefix="data_"
+tiled_project_file=""
+post_processor=""
+save_tileset_to=""

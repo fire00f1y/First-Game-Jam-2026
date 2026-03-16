@@ -1,0 +1,23 @@
+[remap]
+
+importer="YATI"
+type="PackedScene"
+uid="uid://pn6mdhnav8xg"
+path="res://.godot/imported/wall-2-rule2-applies variations.tmx-983d609ff89ef4e0242098c56b9f56f1.tscn"
+
+[deps]
+
+source_file="res://assets/tiles/Crypt V1.6/TiledMap Editor/Rules/wall-2-rule2-applies variations.tmx"
+dest_files=["res://.godot/imported/wall-2-rule2-applies variations.tmx-983d609ff89ef4e0242098c56b9f56f1.tscn"]
+
+[params]
+
+use_default_filter=false
+add_class_as_metadata=false
+add_id_as_metadata=false
+no_alternative_tiles=false
+map_wangset_to_terrain=false
+custom_data_prefix="data_"
+tiled_project_file=""
+post_processor=""
+save_tileset_to=""
