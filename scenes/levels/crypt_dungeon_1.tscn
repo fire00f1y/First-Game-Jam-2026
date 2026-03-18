@@ -12,7 +12,22 @@
 [ext_resource type="Texture2D" uid="uid://cb8bxhuqepmoc" path="res://assets/tiles/UI books & more.png" id="10_baw5v"]
 [ext_resource type="Script" uid="uid://dty00rvy5eljv" path="res://scripts/ui/stat_bar.gd" id="11_baw5v"]
 
+[sub_resource type="Gradient" id="Gradient_baw5v"]
+offsets = PackedFloat32Array(0, 0.72507125)
+colors = PackedColorArray(1, 1, 1, 0.105882354, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yi7yp"]
+gradient = SubResource("Gradient_baw5v")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_baw5v"]
+
+[sub_resource type="Environment" id="Environment_baw5v"]
+background_mode = 3
+glow_enabled = true
 
 [node name="crypt_dungeon_1" type="Node2D" unique_id=721659222]
 
@@ -52,6 +67,9 @@ spell_book = ExtResource("3_g5s6y")
 
 [node name="Camera2D" type="Camera2D" parent="level_objects/Wizard" unique_id=1766211107]
 zoom = Vector2(1.5, 1.5)
+
+[node name="PointLight2D" type="PointLight2D" parent="level_objects/Wizard" unique_id=858140134]
+texture = SubResource("GradientTexture2D_yi7yp")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2025187227]
 
@@ -179,3 +197,9 @@ texture_progress = SubResource("CanvasTexture_baw5v")
 script = ExtResource("11_baw5v")
 stat_type = 2
 bar_color = Color(0.35600263, 0.0012739247, 0.57964444, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2059849001]
+color = Color(0.16470589, 0.12156863, 0.20784314, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1846743864]
+environment = SubResource("Environment_baw5v")

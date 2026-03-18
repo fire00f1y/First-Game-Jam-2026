@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c0wr6uw8rrie7" path="res://assets/tiles/4.png" id="1_ql5qc"]
 [ext_resource type="Script" uid="uid://cpwac8oeo63v3" path="res://scripts/spells/BaseSpell.gd" id="1_vaqcd"]
+[ext_resource type="Script" uid="uid://y063pcl82n2w" path="res://scripts/items/torch.gd" id="3_fnao3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vaqcd"]
 radius = 3.1622777
@@ -92,6 +93,27 @@ _data = {
 &"burn": SubResource("Animation_wk21o")
 }
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vaqcd"]
+lifetime_randomness = 0.9
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+gravity = Vector3(0, 0, 0)
+color = Color(0.99215686, 0.63529414, 0.08627451, 1)
+turbulence_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_vaqcd"]
+offsets = PackedFloat32Array(0, 0.081196584, 0.16381766, 0.22364673, 0.36324787, 0.46581197, 0.55413103, 0.6054131, 0.6310541)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.86752135, 1, 1, 1, 0.73361826, 1, 1, 1, 0.62535614, 1, 1, 1, 0.491453, 1, 1, 1, 0.37179488, 1, 1, 1, 0.35686275, 1, 1, 1, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fnao3"]
+gradient = SubResource("Gradient_vaqcd")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Fireball" type="Node2D" unique_id=1680749946]
 script = ExtResource("1_vaqcd")
 scale_factor = Vector2(3, 2)
@@ -109,3 +131,16 @@ shape = SubResource("CircleShape2D_vaqcd")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1484965213]
 libraries/ = SubResource("AnimationLibrary_6cgh7")
 autoplay = &"burn"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=704346133]
+amount = 32
+amount_ratio = 0.4
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_vaqcd")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=663984342]
+color = Color(1, 0.6745098, 0.09411765, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_fnao3")
+script = ExtResource("3_fnao3")
+flicker_amount = 0.5
