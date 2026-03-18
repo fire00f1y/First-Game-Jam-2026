@@ -441,3 +441,22 @@ shape = SubResource("CapsuleShape2D_7nlfn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=700090595]
 libraries/ = SubResource("AnimationLibrary_mx6b2")
+
+[node name="IncantationRunes" type="Node2D" parent="." unique_id=2013065608]
+position = Vector2(0, -62)
+
+[node name="rune1" type="Sprite2D" parent="IncantationRunes" unique_id=487044812]
+visible = false
+position = Vector2(-30, 0)
+
+[node name="rune2" type="Sprite2D" parent="IncantationRunes" unique_id=1829887089]
+visible = false
+position = Vector2(-10, 0)
+
+[node name="rune3" type="Sprite2D" parent="IncantationRunes" unique_id=2110663904]
+visible = false
+position = Vector2(10, 0)
+
+[node name="rune4" type="Sprite2D" parent="IncantationRunes" unique_id=1551080554]
+visible = false
+position = Vector2(30, 0)
