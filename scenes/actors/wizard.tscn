@@ -418,6 +418,9 @@ _data = {
 &"run": SubResource("Animation_2bkgx")
 }
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wkuk4"]
+light_mode = 1
+
 [node name="Wizard" type="CharacterBody2D" unique_id=1287767002]
 script = ExtResource("1_wkuk4")
 
@@ -443,20 +446,25 @@ shape = SubResource("CapsuleShape2D_7nlfn")
 libraries/ = SubResource("AnimationLibrary_mx6b2")
 
 [node name="IncantationRunes" type="Node2D" parent="." unique_id=2013065608]
+material = SubResource("CanvasItemMaterial_wkuk4")
 position = Vector2(0, -62)
 
 [node name="rune1" type="Sprite2D" parent="IncantationRunes" unique_id=487044812]
 visible = false
+use_parent_material = true
 position = Vector2(-30, 0)
 
 [node name="rune2" type="Sprite2D" parent="IncantationRunes" unique_id=1829887089]
 visible = false
+use_parent_material = true
 position = Vector2(-10, 0)
 
 [node name="rune3" type="Sprite2D" parent="IncantationRunes" unique_id=2110663904]
 visible = false
+use_parent_material = true
 position = Vector2(10, 0)
 
 [node name="rune4" type="Sprite2D" parent="IncantationRunes" unique_id=1551080554]
 visible = false
+use_parent_material = true
 position = Vector2(30, 0)
