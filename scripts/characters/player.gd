@@ -22,6 +22,9 @@ func _ready() -> void:
 	sword_hitbox.body_entered.connect(_on_sword_hitbox_entered)
 
 func _on_sword_hitbox_entered(body: Node) -> void:
+	if not is_attacking:
+		return
+		
 	if body.is_in_group("monster"):
 		enemies_hit_in_swing.append(body)
 		
@@ -93,7 +96,7 @@ func _handle_animations(state: String, input: Vector2) -> void:
 func modify_health(source: Node, amount: int) -> void:
 	current_health = clamp(current_health + amount, -1 * abs(amount), max_health)
 	print("Current health changed by %d from %s. new health: %d" % [amount, source.name, current_health])
-	if amount < 0:
+	if amount > 0:
 		_take_damage()
 	
 	if current_health <= 0:

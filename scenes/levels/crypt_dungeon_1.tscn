@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://ca4yr8fn4c4ol"]
 
 [ext_resource type="TileSet" uid="uid://bodgps640jl7b" path="res://assets/resources/crypt_tileset.tres" id="1_x6r5d"]
+[ext_resource type="PackedScene" uid="uid://sy71xeeuby5e" path="res://scenes/actors/wizard.tscn" id="2_r23hs"]
 
 [node name="crypt_dungeon_1" type="Node2D" unique_id=721659222]
 
@@ -23,3 +24,9 @@ tile_set = ExtResource("1_x6r5d")
 [node name="crypt_wall_decor" type="TileMapLayer" parent="." unique_id=435176911]
 tile_map_data = PackedByteArray("AAAOAPP/AwAXACQAAAAWAP7/BAAKABYAAAAWAP//BAAKABcAAAAWAAAABAAKABgAAAAXAP7/BAALABYAAAAXAP//BAALABcAAAAXAAAABAALABgAAAAbAP7/BAAKABYAAAAbAP//BAAKABcAAAAbAAAABAAKABgAAAAcAP7/BAALABYAAAAcAP//BAALABcAAAAcAAAABAALABgAAAA=")
 tile_set = ExtResource("1_x6r5d")
+
+[node name="Wizard" parent="." unique_id=1287767002 instance=ExtResource("2_r23hs")]
+position = Vector2(779, 338)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="Wizard" unique_id=1766211107]
