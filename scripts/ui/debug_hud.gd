@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var info_label: Label = $InfoLabel
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var fps : float = Performance.get_monitor(Performance.TIME_FPS)
 	var move_x : float = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	var move_y : float = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")

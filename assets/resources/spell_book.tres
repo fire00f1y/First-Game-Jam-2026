@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpellBook" format=3 uid="uid://xtwiuiqep3mx"]
+
+[ext_resource type="Script" uid="uid://0q0bxkgy3f6a" path="res://scripts/spells/SpellBook.gd" id="1_3j3ex"]
+[ext_resource type="Script" uid="uid://bam44ov0dhid8" path="res://scripts/spells/SpellData.gd" id="2_3fbrg"]
+[ext_resource type="Texture2D" uid="uid://ckdha8v4gb6u" path="res://assets/tiles/48 Magic Runes Pixel Art Icon Pack/PNG/Background/runes+bricks+effects/Icon1.png" id="3_7nc3l"]
+[ext_resource type="PackedScene" uid="uid://c1p2t6glhmpbk" path="res://scenes/spells/fireball.tscn" id="4_5g3ka"]
+
+[sub_resource type="Resource" id="Resource_pspyu"]
+script = ExtResource("2_3fbrg")
+spell_name = "fireball"
+combo = Array[String](["fire"])
+damage = 15.0
+speed = 100.0
+scene = ExtResource("4_5g3ka")
+icon = ExtResource("3_7nc3l")
+lifetime = 3.0
+metadata/_custom_type_script = "uid://bam44ov0dhid8"
+
+[resource]
+script = ExtResource("1_3j3ex")
+spells = Array[ExtResource("2_3fbrg")]([SubResource("Resource_pspyu")])
+metadata/_custom_type_script = "uid://0q0bxkgy3f6a"

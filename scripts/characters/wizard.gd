@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var max_health: int = 100
 @export var spell_power: int = 10
 
-@onready var visuals: Node2D = $Visuals
+@onready var visuals: Marker2D = $Visuals
 @onready var sprite: Sprite2D = $Visuals/Sprite2D
 @onready var hitbox: Area2D = $Visuals/HitboxContainer
 @onready var anim: AnimationPlayer = $AnimationPlayer
@@ -15,8 +15,11 @@ var is_stunned: bool = false
 var combo_count: int = 0
 var is_combo_buffered: bool = false
 var combo_timing_window_open: bool = false
+var facing: Vector2 = Vector2.RIGHT
 
 var enemies_hit_in_attack: Array[Node] = []
+
+@export var spell_book : SpellBook
 
 const spell_rune_path_prefix : String = "res://assets/tiles/48 Magic Runes Pixel Art Icon Pack/PNG/Transperent/runes/"
 const fire_icon : String = spell_rune_path_prefix + "Icon1.png"
@@ -48,6 +51,40 @@ func _refresh_display():
 		else:
 			slots[i].visible = false
 
+func cast_incantation(type: String) -> void:
+	if incantation.size() == 0:
+		return
+	
+	if not spell_book:
+		if OS.is_debug_build():
+			print("no spell book attached to player")
+		return
+	
+	var match : SpellData = find_spell()
+	if not match:
+		print("no spell found for incantation: ", incantation)
+		clear_incantation()
+		return
+	
+	if OS.is_debug_build():
+		print("casting %s spell: %s with power: %f" % [type, match.spell_name, match.damage])
+	
+	_cast(match)
+	clear_incantation()
+
+func find_spell() -> SpellData:
+	for spell: SpellData in spell_book.spells:
+		if spell.combo == incantation:
+			return spell
+	
+	return null
+
+func _cast(spell: SpellData):
+	var effect: BaseSpell = spell.scene.instantiate() as BaseSpell
+	get_parent().add_child(effect)
+	effect.global_position = global_position + facing * 16
+	effect.setup(spell, facing)
+
 func clear_incantation():
 	incantation.clear()
 	_refresh_display()
@@ -76,8 +113,10 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		_handle_attack("attack2")
+		cast_incantation("direct")
 	elif Input.is_action_just_pressed("block") and not is_attacking:
 		_handle_attack("attack1")
+		cast_incantation("area")
 	
 	if Input.is_action_just_pressed("fire"):
 		add_element("fire")
@@ -98,13 +137,12 @@ func _physics_process(delta: float) -> void:
 # this handles animation transition
 func _handle_attack(attack: String):
 	enemies_hit_in_attack.clear()
-	clear_incantation()
 	is_attacking = true
 	anim.play(attack)
 	await anim.animation_finished
 	is_attacking = false
 
-func _handle_movement(delta: float) -> void:
+func _handle_movement(_delta: float) -> void:
 	var input_vector : Vector2 = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
@@ -128,8 +166,10 @@ func _handle_animations(state: String, input: Vector2) -> void:
 	
 	if input.x > 0:
 		visuals.scale.x = 1
+		facing = Vector2.RIGHT
 	elif input.x < 0:
 		visuals.scale.x = -1
+		facing = Vector2.LEFT
 
 func modify_health(source: Node, amount: int) -> void:
 	if amount < 0: # positive is healing, negative is damage

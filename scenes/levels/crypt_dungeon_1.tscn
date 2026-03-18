@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bodgps640jl7b" path="res://assets/resources/crypt_tileset.tres" id="1_x6r5d"]
 [ext_resource type="PackedScene" uid="uid://sy71xeeuby5e" path="res://scenes/actors/wizard.tscn" id="2_r23hs"]
+[ext_resource type="Resource" uid="uid://xtwiuiqep3mx" path="res://assets/resources/spell_book.tres" id="3_g5s6y"]
 [ext_resource type="PackedScene" uid="uid://3bo5bch7co6t" path="res://scenes/ui/debug_hud.tscn" id="3_m82qa"]
 
 [node name="crypt_dungeon_1" type="Node2D" unique_id=721659222]
@@ -39,9 +40,10 @@ tile_set = ExtResource("1_x6r5d")
 y_sort_enabled = true
 position = Vector2(779, 338)
 scale = Vector2(0.5, 0.5)
+spell_book = ExtResource("3_g5s6y")
 
 [node name="Camera2D" type="Camera2D" parent="level_objects/Wizard" unique_id=1766211107]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2025187227]
 
