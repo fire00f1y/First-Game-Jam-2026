@@ -4,6 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://sy71xeeuby5e" path="res://scenes/actors/wizard.tscn" id="2_r23hs"]
 [ext_resource type="Resource" uid="uid://xtwiuiqep3mx" path="res://assets/resources/spell_book.tres" id="3_g5s6y"]
 [ext_resource type="PackedScene" uid="uid://3bo5bch7co6t" path="res://scenes/ui/debug_hud.tscn" id="3_m82qa"]
+[ext_resource type="PackedScene" uid="uid://06wiv7v628ht" path="res://scenes/ui/element_button.tscn" id="5_ftr2u"]
+[ext_resource type="Texture2D" uid="uid://bh66087kr1nmx" path="res://assets/tiles/48 Magic Runes Pixel Art Icon Pack/PNG/Transperent/runes+bricks/Icon1.png" id="6_cqpqm"]
+[ext_resource type="Texture2D" uid="uid://cakcler4pamag" path="res://assets/tiles/48 Magic Runes Pixel Art Icon Pack/PNG/Transperent/runes+bricks/Icon20.png" id="7_deenx"]
+[ext_resource type="Texture2D" uid="uid://dw4dlvxrte2q5" path="res://assets/tiles/48 Magic Runes Pixel Art Icon Pack/PNG/Transperent/runes+bricks/Icon10.png" id="8_baw5v"]
+[ext_resource type="Texture2D" uid="uid://cuwb45h4ca336" path="res://assets/tiles/48 Magic Runes Pixel Art Icon Pack/PNG/Transperent/runes+bricks/Icon45.png" id="9_yi7yp"]
 
 [node name="crypt_dungeon_1" type="Node2D" unique_id=721659222]
 
@@ -48,3 +53,32 @@ zoom = Vector2(2, 2)
 [node name="UI" type="CanvasLayer" parent="." unique_id=2025187227]
 
 [node name="DebugHUD" parent="UI" unique_id=1987173055 instance=ExtResource("3_m82qa")]
+
+[node name="ButtonDirections" type="HBoxContainer" parent="UI" unique_id=140329462]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -59.0
+offset_right = 140.0
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Element1" parent="UI/ButtonDirections" unique_id=1114735135 instance=ExtResource("5_ftr2u")]
+layout_mode = 2
+button_text = "1"
+button_icon = ExtResource("6_cqpqm")
+
+[node name="Element2" parent="UI/ButtonDirections" unique_id=907436756 instance=ExtResource("5_ftr2u")]
+layout_mode = 2
+button_text = "2"
+button_icon = ExtResource("8_baw5v")
+
+[node name="Element3" parent="UI/ButtonDirections" unique_id=762329599 instance=ExtResource("5_ftr2u")]
+layout_mode = 2
+button_text = "3"
+button_icon = ExtResource("9_yi7yp")
+
+[node name="Element4" parent="UI/ButtonDirections" unique_id=87435993 instance=ExtResource("5_ftr2u")]
+layout_mode = 2
+button_text = "4"
+button_icon = ExtResource("7_deenx")
