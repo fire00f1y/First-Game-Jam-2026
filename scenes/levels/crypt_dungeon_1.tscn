@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://xtwiuiqep3mx" path="res://assets/resources/spell_book.tres" id="3_g5s6y"]
 [ext_resource type="PackedScene" uid="uid://3bo5bch7co6t" path="res://scenes/ui/debug_hud.tscn" id="3_m82qa"]
 [ext_resource type="Script" uid="uid://y063pcl82n2w" path="res://scripts/items/torch.gd" id="4_yi7yp"]
+[ext_resource type="PackedScene" uid="uid://cj14uvy0ghgv1" path="res://scenes/items/crypt_wall_torch.tscn" id="5_da06s"]
 [ext_resource type="PackedScene" uid="uid://06wiv7v628ht" path="res://scenes/ui/element_button.tscn" id="5_ftr2u"]
 [ext_resource type="Texture2D" uid="uid://bh66087kr1nmx" path="res://assets/tiles/48 Magic Runes Pixel Art Icon Pack/PNG/Transperent/runes+bricks/Icon1.png" id="6_cqpqm"]
 [ext_resource type="Texture2D" uid="uid://cakcler4pamag" path="res://assets/tiles/48 Magic Runes Pixel Art Icon Pack/PNG/Transperent/runes+bricks/Icon20.png" id="7_deenx"]
@@ -27,9 +28,9 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="Environment" id="Environment_baw5v"]
 background_mode = 3
 glow_enabled = true
-glow_intensity = 1.5
-glow_bloom = 0.1
-glow_hdr_threshold = 0.87
+glow_normalized = true
+glow_intensity = 0.4
+glow_bloom = 1.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_baw5v"]
 
@@ -83,6 +84,18 @@ color = Color(0.29353034, 0.22655457, 0.3668858, 1)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="level_objects" unique_id=1846743864]
 environment = SubResource("Environment_baw5v")
 
+[node name="crypt_wall_torch" parent="level_objects" unique_id=286330275 instance=ExtResource("5_da06s")]
+position = Vector2(635, 393)
+
+[node name="crypt_wall_torch2" parent="level_objects" unique_id=1547025489 instance=ExtResource("5_da06s")]
+position = Vector2(809, 394)
+
+[node name="crypt_wall_torch3" parent="level_objects" unique_id=1587562924 instance=ExtResource("5_da06s")]
+position = Vector2(633, 535)
+
+[node name="crypt_wall_torch4" parent="level_objects" unique_id=362005104 instance=ExtResource("5_da06s")]
+position = Vector2(806, 535)
+
 [node name="UI" type="CanvasLayer" parent="." unique_id=2025187227]
 
 [node name="FullScreenCanvas" type="Control" parent="UI" unique_id=1456163388]
@@ -90,6 +103,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 17.0
+offset_right = 7.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
 

@@ -130,3 +130,4 @@ electric={
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 viewport/hdr_2d=true
+environment/defaults/default_clear_color=Color(0.09510859, 0.0018171855, 0.081627645, 1)
