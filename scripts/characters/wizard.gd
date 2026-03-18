@@ -79,7 +79,14 @@ func find_spell() -> SpellData:
 	
 	return null
 
-func _cast(spell: SpellData):
+func _cast(spell: SpellData) -> void:
+	if spell.mana_cost > PlayerStats.mana:
+		print("not enough mana to cast %s" % spell.spell_name)
+		return
+	
+	PlayerStats.spend_mana(spell.mana_cost)
+	PlayerStats.add_chaos(spell.chaos_cost)
+	
 	var effect: BaseSpell = spell.scene.instantiate() as BaseSpell
 	get_parent().add_child(effect)
 	effect.global_position = global_position + facing * 16

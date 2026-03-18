@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d2m0vxkdoyorx"]
+
+[ext_resource type="Script" uid="uid://dty00rvy5eljv" path="res://scripts/ui/stat_bar.gd" id="1_roq0j"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_n4xyv"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_roq0j"]
+
+[node name="BarContainer" type="Control" unique_id=198424995]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_roq0j")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=503779213]
+custom_minimum_size = Vector2(100, 16)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+value = 50.0
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = SubResource("CanvasTexture_n4xyv")
+texture_progress = SubResource("CanvasTexture_roq0j")
+tint_under = Color(0.2036809, 0.20368093, 0.2036809, 1)

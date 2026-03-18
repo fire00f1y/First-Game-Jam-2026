@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cakcler4pamag" path="res://assets/tiles/48 Magic Runes Pixel Art Icon Pack/PNG/Transperent/runes+bricks/Icon20.png" id="7_deenx"]
 [ext_resource type="Texture2D" uid="uid://dw4dlvxrte2q5" path="res://assets/tiles/48 Magic Runes Pixel Art Icon Pack/PNG/Transperent/runes+bricks/Icon10.png" id="8_baw5v"]
 [ext_resource type="Texture2D" uid="uid://cuwb45h4ca336" path="res://assets/tiles/48 Magic Runes Pixel Art Icon Pack/PNG/Transperent/runes+bricks/Icon45.png" id="9_yi7yp"]
+[ext_resource type="Texture2D" uid="uid://cb8bxhuqepmoc" path="res://assets/tiles/UI books & more.png" id="10_baw5v"]
+[ext_resource type="Script" uid="uid://dty00rvy5eljv" path="res://scripts/ui/stat_bar.gd" id="11_baw5v"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_baw5v"]
 
 [node name="crypt_dungeon_1" type="Node2D" unique_id=721659222]
 
@@ -93,3 +97,85 @@ button_icon = ExtResource("9_yi7yp")
 layout_mode = 2
 button_text = "4"
 button_icon = ExtResource("7_deenx")
+
+[node name="BarMarginContainer" type="Control" parent="UI/FullScreenCanvas" unique_id=1583178784]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -332.0
+offset_top = -120.0
+offset_right = -32.0
+offset_bottom = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="StatsBackground" type="NinePatchRect" parent="UI/FullScreenCanvas/BarMarginContainer" unique_id=814552569]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_baw5v")
+region_rect = Rect2(16, 272, 32, 16)
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/FullScreenCanvas/BarMarginContainer" unique_id=1058285713]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 34
+theme_override_constants/margin_top = 34
+theme_override_constants/margin_right = 34
+theme_override_constants/margin_bottom = 34
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/FullScreenCanvas/BarMarginContainer/MarginContainer" unique_id=1274458782]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="HealthPanel" type="PanelContainer" parent="UI/FullScreenCanvas/BarMarginContainer/MarginContainer/VBoxContainer" unique_id=458117275]
+clip_contents = true
+layout_mode = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="UI/FullScreenCanvas/BarMarginContainer/MarginContainer/VBoxContainer/HealthPanel" unique_id=1932148743]
+custom_minimum_size = Vector2(100, 16)
+layout_mode = 2
+fill_mode = 1
+nine_patch_stretch = true
+texture_progress = SubResource("CanvasTexture_baw5v")
+script = ExtResource("11_baw5v")
+bar_color = Color(1, 0, 0, 1)
+
+[node name="ManaPanel" type="PanelContainer" parent="UI/FullScreenCanvas/BarMarginContainer/MarginContainer/VBoxContainer" unique_id=1422678703]
+clip_contents = true
+layout_mode = 2
+
+[node name="ManaBar" type="TextureProgressBar" parent="UI/FullScreenCanvas/BarMarginContainer/MarginContainer/VBoxContainer/ManaPanel" unique_id=1716231532]
+custom_minimum_size = Vector2(100, 16)
+layout_mode = 2
+fill_mode = 1
+nine_patch_stretch = true
+texture_progress = SubResource("CanvasTexture_baw5v")
+script = ExtResource("11_baw5v")
+stat_type = 1
+bar_color = Color(0.16666651, 0, 1, 1)
+
+[node name="ChaosPanel" type="PanelContainer" parent="UI/FullScreenCanvas/BarMarginContainer/MarginContainer/VBoxContainer" unique_id=1518762475]
+clip_contents = true
+layout_mode = 2
+
+[node name="ChaosBar" type="TextureProgressBar" parent="UI/FullScreenCanvas/BarMarginContainer/MarginContainer/VBoxContainer/ChaosPanel" unique_id=1316522106]
+custom_minimum_size = Vector2(100, 16)
+layout_mode = 2
+fill_mode = 1
+nine_patch_stretch = true
+texture_progress = SubResource("CanvasTexture_baw5v")
+script = ExtResource("11_baw5v")
+stat_type = 2
+bar_color = Color(0.35600263, 0.0012739247, 0.57964444, 1)

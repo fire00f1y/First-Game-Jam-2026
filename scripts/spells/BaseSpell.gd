@@ -19,7 +19,6 @@ func setup(spell: SpellData, dir: Vector2) -> void:
 	speed = spell.speed
 	scale.x = dir.x
 	damage = spell.damage
-	PlayerStats.add_chaos(spell.chaos_cost)
 	if spell.lifetime > 0:
 		ttl = spell.lifetime
 
