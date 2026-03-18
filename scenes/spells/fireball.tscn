@@ -104,13 +104,13 @@ color = Color(0.99215686, 0.63529414, 0.08627451, 1)
 turbulence_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_vaqcd"]
-offsets = PackedFloat32Array(0, 0.081196584, 0.16381766, 0.22364673, 0.36324787, 0.46581197, 0.55413103, 0.6054131, 0.6310541)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.86752135, 1, 1, 1, 0.73361826, 1, 1, 1, 0.62535614, 1, 1, 1, 0.491453, 1, 1, 1, 0.37179488, 1, 1, 1, 0.35686275, 1, 1, 1, 0, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.36324787, 0.70797724)
+colors = PackedColorArray(1, 1, 1, 0.64705884, 1, 1, 1, 0.42352942, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fnao3"]
 gradient = SubResource("Gradient_vaqcd")
-width = 128
-height = 128
+width = 256
+height = 256
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -143,4 +143,5 @@ color = Color(1, 0.6745098, 0.09411765, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_fnao3")
 script = ExtResource("3_fnao3")
-flicker_amount = 0.5
+flicker_amount = 0.8
+speed = 2.5
