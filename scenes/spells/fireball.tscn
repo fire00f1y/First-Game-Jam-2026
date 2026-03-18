@@ -94,10 +94,10 @@ _data = {
 
 [node name="Fireball" type="Node2D" unique_id=1680749946]
 script = ExtResource("1_vaqcd")
+scale_factor = Vector2(3, 2)
 metadata/_custom_type_script = "uid://cpwac8oeo63v3"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=390536722]
-scale = Vector2(2, 2)
 texture = ExtResource("1_ql5qc")
 hframes = 4
 

@@ -1,5 +1,5 @@
 @tool
-extends Control
+extends NinePatchRect
 
 @export var button_text: String:
 	set(value):
@@ -13,8 +13,8 @@ extends Control
 		if is_node_ready() and button_image:
 			button_image.texture = value
 
-@onready var button_label: Label = $VBoxContainer/ButtonLabel
-@onready var button_image: TextureRect = $VBoxContainer/ButtonImage
+@onready var button_label: Label = $MarginContainer/VBoxContainer/ButtonLabel
+@onready var button_image: TextureRect = $MarginContainer/VBoxContainer/ButtonImage
 
 func _ready() -> void:
 	button_label.text = button_text

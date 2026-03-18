@@ -90,7 +90,13 @@ func clear_incantation():
 	_refresh_display()
 
 func _ready() -> void:
+	print(PlayerStats)
 	hitbox.body_entered.connect(_on_hitbox_entered)
+	PlayerStats.chaos_maxed.connect(_on_chaos_maxed)
+	
+func _on_chaos_maxed() -> void:
+	PlayerStats.reduce_chaos(30)
+	PlayerStats.take_damage(25)
 
 func _on_hitbox_entered(body: Node) -> void:
 	if not is_attacking:

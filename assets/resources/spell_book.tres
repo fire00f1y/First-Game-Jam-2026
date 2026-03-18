@@ -14,6 +14,7 @@ speed = 200.0
 scene = ExtResource("4_5g3ka")
 icon = ExtResource("3_7nc3l")
 lifetime = 2.0
+size_scale = 1.5
 metadata/_custom_type_script = "uid://bam44ov0dhid8"
 
 [resource]
