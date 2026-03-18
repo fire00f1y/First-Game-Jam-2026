@@ -52,33 +52,45 @@ zoom = Vector2(2, 2)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2025187227]
 
-[node name="DebugHUD" parent="UI" unique_id=1987173055 instance=ExtResource("3_m82qa")]
+[node name="Control" type="Control" parent="UI" unique_id=583748179]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="ButtonDirections" type="HBoxContainer" parent="UI" unique_id=140329462]
+[node name="DebugHUD" parent="UI/Control" unique_id=1987173055 instance=ExtResource("3_m82qa")]
+
+[node name="ButtonDirections" type="HBoxContainer" parent="UI/Control" unique_id=140329462]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -59.0
-offset_right = 140.0
+offset_left = 50.0
+offset_top = -109.0
+offset_right = 190.0
+offset_bottom = -50.0
 grow_vertical = 0
+theme_override_constants/separation = 16
 metadata/_edit_use_anchors_ = true
 
-[node name="Element1" parent="UI/ButtonDirections" unique_id=1114735135 instance=ExtResource("5_ftr2u")]
+[node name="Element1" parent="UI/Control/ButtonDirections" unique_id=1114735135 instance=ExtResource("5_ftr2u")]
 layout_mode = 2
 button_text = "1"
 button_icon = ExtResource("6_cqpqm")
 
-[node name="Element2" parent="UI/ButtonDirections" unique_id=907436756 instance=ExtResource("5_ftr2u")]
+[node name="Element2" parent="UI/Control/ButtonDirections" unique_id=907436756 instance=ExtResource("5_ftr2u")]
 layout_mode = 2
 button_text = "2"
 button_icon = ExtResource("8_baw5v")
 
-[node name="Element3" parent="UI/ButtonDirections" unique_id=762329599 instance=ExtResource("5_ftr2u")]
+[node name="Element3" parent="UI/Control/ButtonDirections" unique_id=762329599 instance=ExtResource("5_ftr2u")]
 layout_mode = 2
 button_text = "3"
 button_icon = ExtResource("9_yi7yp")
 
-[node name="Element4" parent="UI/ButtonDirections" unique_id=87435993 instance=ExtResource("5_ftr2u")]
+[node name="Element4" parent="UI/Control/ButtonDirections" unique_id=87435993 instance=ExtResource("5_ftr2u")]
 layout_mode = 2
 button_text = "4"
 button_icon = ExtResource("7_deenx")
