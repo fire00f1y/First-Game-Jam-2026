@@ -4961,6 +4961,10 @@ texture_region_size = Vector2i(32, 32)
 13:30/0 = 0
 13:31/0 = 0
 11:32/0 = 0
+7:33/0 = 0
+8:33/0 = 0
+9:33/0 = 0
+10:33/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2yb2i"]
 resource_name = "banner 8"

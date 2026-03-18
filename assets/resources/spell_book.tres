@@ -10,10 +10,10 @@ script = ExtResource("2_3fbrg")
 spell_name = "fireball"
 combo = Array[String](["fire"])
 damage = 15.0
-speed = 100.0
+speed = 200.0
 scene = ExtResource("4_5g3ka")
 icon = ExtResource("3_7nc3l")
-lifetime = 3.0
+lifetime = 2.0
 metadata/_custom_type_script = "uid://bam44ov0dhid8"
 
 [resource]
