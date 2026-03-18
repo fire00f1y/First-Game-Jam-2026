@@ -8,10 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://sv178bsqcvi4" path="res://assets/tiles/Wizard Pack/Wizard Pack/Idle.png" id="5_dce5a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tx7ij"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7nlfn"]
+radius = 18.0
+height = 50.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kr3no"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7nlfn"]
 
 [sub_resource type="Animation" id="Animation_m7jmm"]
 length = 0.001
@@ -50,6 +52,54 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PhysicsCollider:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-9, 22)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PhysicsCollider:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_tx7ij")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PhysicsCollider:shape:radius")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [18.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PhysicsCollider:shape:height")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [50.0]
 }
 
 [sub_resource type="Animation" id="Animation_i0dv5"]
@@ -215,6 +265,54 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PhysicsCollider:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-9, 22)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PhysicsCollider:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_tx7ij")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PhysicsCollider:shape:radius")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [18.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PhysicsCollider:shape:height")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [50.0]
+}
 
 [sub_resource type="Animation" id="Animation_173uh"]
 resource_name = "jump"
@@ -259,6 +357,54 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PhysicsCollider:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_tx7ij")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PhysicsCollider:shape:radius")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [23.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PhysicsCollider:shape:height")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [50.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PhysicsCollider:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-14, 20)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mx6b2"]
 _data = {
@@ -276,10 +422,8 @@ _data = {
 script = ExtResource("1_wkuk4")
 
 [node name="PhysicsCollider" type="CollisionShape2D" parent="." unique_id=1848997788]
+position = Vector2(-9, 22)
 shape = SubResource("CapsuleShape2D_tx7ij")
-
-[node name="Hurtbox" type="CollisionShape2D" parent="." unique_id=52251126]
-shape = SubResource("CapsuleShape2D_7nlfn")
 
 [node name="Visuals" type="Marker2D" parent="." unique_id=1716236340]
 
@@ -291,6 +435,9 @@ hframes = 2
 
 [node name="Hitbox" type="CollisionShape2D" parent="Visuals/HitboxContainer" unique_id=799732236]
 shape = SubResource("CapsuleShape2D_kr3no")
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Visuals/HitboxContainer" unique_id=52251126]
+shape = SubResource("CapsuleShape2D_7nlfn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=700090595]
 libraries/ = SubResource("AnimationLibrary_mx6b2")
